@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mobile.blm3520signup">
+    package="com.ykk.ykk15011083_InformationRegister">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,21 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CourseDetails"></activity>
-        <activity android:name=".CoursesActivity" />
-        <activity android:name=".LoginActivity" android:noHistory="true">
+        <activity android:name="com.ykk.ykk15011083_InformationRegister.CourseDetails"></activity>
+        <activity android:name="com.ykk.ykk15011083_InformationRegister.CoursesActivity" />
+        <activity android:name="com.ykk.ykk15011083_InformationRegister.LoginActivity" android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfilePage" />
-        <activity android:name=".InputActivity" />
+        <activity android:name="com.ykk.ykk15011083_InformationRegister.ProfilePage" />
+        <activity android:name="com.ykk.ykk15011083_InformationRegister.InputActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.mobile.blm3520signup.fileprovider"
+            android:authorities="com.ykk.ykk15011083_InformationRegister.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -1,4 +1,4 @@
-package com.mobile.blm3520signup;
+package com.ykk.ykk15011083_InformationRegister;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

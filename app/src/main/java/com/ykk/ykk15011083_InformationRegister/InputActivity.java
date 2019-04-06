@@ -1,4 +1,4 @@
-package com.mobile.blm3520signup;
+package com.ykk.ykk15011083_InformationRegister;
 
 import android.Manifest;
 import android.app.DatePickerDialog;

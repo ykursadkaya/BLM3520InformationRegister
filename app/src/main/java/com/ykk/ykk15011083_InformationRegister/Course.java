@@ -1,4 +1,4 @@
-package com.mobile.blm3520signup;
+package com.ykk.ykk15011083_InformationRegister;
 
 import java.io.Serializable;
 import java.util.ArrayList;
