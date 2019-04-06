@@ -24,7 +24,7 @@ import java.util.Calendar;
 public class ProfilePage extends AppCompatActivity
 {
 	private EditText viewName, viewSurname, viewID, viewBirthday, viewPlace, viewAge, viewPhone, viewMail;
-	private Button back, call, addEvent, mail;
+	private Button back, call, addEvent, mail, courses;
 	private ImageView ppView;
 	private final Calendar calendar = Calendar.getInstance();
 
@@ -48,6 +48,7 @@ public class ProfilePage extends AppCompatActivity
 		call = (Button) findViewById(R.id.button_Call);
 		mail = (Button) findViewById(R.id.button_Email);
 		addEvent = (Button) findViewById(R.id.button_AddEvent);
+		courses = (Button) findViewById(R.id.button_ListCourses);
 		ppView = (ImageView) findViewById(R.id.imageView_PP_PPage);
 
 		final Intent intent = getIntent();
@@ -179,6 +180,16 @@ public class ProfilePage extends AppCompatActivity
 				returnIntent.putExtra("return", "Turned back from profile page successfully");
 				setResult(RESULT_OK, returnIntent);
 				finish();
+			}
+		});
+
+		courses.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				Intent coursesIntent = new Intent(ProfilePage.this, CoursesActivity.class);
+				startActivity(coursesIntent);
 			}
 		});
 	}
