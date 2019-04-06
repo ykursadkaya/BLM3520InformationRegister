@@ -300,6 +300,7 @@ public class InputActivity extends AppCompatActivity
 						e.printStackTrace();
 					}
 				}
+				break;
 			case REQUEST_CODE_CAMERA:
 				System.out.println("Turned back from intent with request code: " + REQUEST_CODE_CAMERA + " result code: " + resultCode);
 				if (resultCode == RESULT_OK)
