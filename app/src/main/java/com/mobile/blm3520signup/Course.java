@@ -1,8 +1,10 @@
 package com.mobile.blm3520signup;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Course
+@SuppressWarnings("serial")
+public class Course implements Serializable
 {
 	private String code;
 	private String name;

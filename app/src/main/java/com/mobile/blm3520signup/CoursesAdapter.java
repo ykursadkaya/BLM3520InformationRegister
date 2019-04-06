@@ -15,10 +15,13 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
 	Context context;
 	ArrayList<Course> list;
 
-	public CoursesAdapter(Context context, ArrayList<Course> list)
+	public OnCoursesAdapterItemClickListener itemClickListener;
+
+	public CoursesAdapter(Context context, ArrayList<Course> list, OnCoursesAdapterItemClickListener itemClickListener)
 	{
 		this.context = context;
 		this.list = list;
+		this.itemClickListener = itemClickListener;
 	}
 
 	@NonNull
@@ -31,10 +34,19 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
 	}
 
 	@Override
-	public void onBindViewHolder(@NonNull CoursesViewHolder coursesViewHolder, int i)
+	public void onBindViewHolder(@NonNull CoursesViewHolder coursesViewHolder, final int i)
 	{
 		coursesViewHolder.courseCode.setText(list.get(i).getCode());
 		coursesViewHolder.grade.setText(String.valueOf(list.get(i).getGrade()));
+
+		coursesViewHolder.itemView.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				itemClickListener.onItemClicked(i);
+ 			}
+		});
 	}
 
 	@Override
@@ -50,8 +62,8 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
 		public CoursesViewHolder(@NonNull View itemView)
 		{
 			super(itemView);
-			courseCode = (TextView) itemView.findViewById(R.id.textView_CourseCode);
-			grade = (TextView) itemView.findViewById(R.id.textView_Grade);
+			courseCode = (TextView) itemView.findViewById(R.id.textView_List_Code);
+			grade = (TextView) itemView.findViewById(R.id.textView_List_Grade);
 		}
 	}
 }

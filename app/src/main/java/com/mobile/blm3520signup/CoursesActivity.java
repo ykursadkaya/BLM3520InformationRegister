@@ -1,5 +1,6 @@
 package com.mobile.blm3520signup;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,7 +25,16 @@ public class CoursesActivity extends AppCompatActivity
 
 		list = Course.getCourseList();
 
-		adapter = new CoursesAdapter(CoursesActivity.this, list);
+		adapter = new CoursesAdapter(CoursesActivity.this, list, new OnCoursesAdapterItemClickListener()
+		{
+			@Override
+			public void onItemClicked(int position)
+			{
+				Intent intent = new Intent(CoursesActivity.this, CourseDetails.class);
+				intent.putExtra("course", list.get(position));
+				startActivity(intent);
+			}
+		});
 		recyclerView.setAdapter(adapter);
 	}
 }
